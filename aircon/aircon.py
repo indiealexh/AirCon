@@ -106,7 +106,7 @@ class Device(object):
   def get_property(self, name: str):
     """Get a stored property (or None if doesn't exist)."""
     with self._properties_lock:
-      return getattr(self._properties, name, None)
+      return getattr(self._properties, str(name), None)
 
   def get_property_type(self, name: str):
     return self._properties.get_type(name)
